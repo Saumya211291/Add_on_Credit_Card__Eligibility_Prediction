@@ -1,0 +1,159 @@
+{% extends 'block.html' %}
+
+{% block subcontent %}
+<div class="card-body text-center">
+	<form method="post" class="form-row" action="/predict">
+		<div class="row">
+			<div class="col-lg-6 col-sm-12">
+				<label for="runs">Customer Name
+					<input class="btn btn-light btn-toolbar" name="name" min="1">
+				</label>
+			</div>
+			<div class="col-lg-6 col-sm-12">
+				<label for="runs">Age
+					<input type="number" class="btn btn-light btn-toolbar" name="Customer_Age" min="18" max="100">
+				</label>
+			</div>
+
+			<div class="col-lg-6 col-sm-12">
+				<label for="overs">Gender
+					<select name="Gender" class="btn btn-light btn-toolbar">
+						<option value="1">Male</option>
+						<option value="0">Female</option>
+					</select>
+				</label>
+			</div>
+			<div class="col-lg-6 col-sm-12">
+				<label for="overs">Number of dependents
+					<select name="Dependent_count" class="btn btn-light btn-toolbar">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">More than 3 </option>
+
+					</select>
+				</label>
+			</div>
+			<div class="col-lg-6 col-sm-12">
+				<label for="overs">Education Level
+					<select name="Education_Level" class="btn btn-light btn-toolbar">
+						<option value="0">Other</option>
+						<option value="1">Uneducated</option>
+						<option value="2">High School</option>
+						<option value="3">College</option>
+						<option value="4">Graduate</option>
+						<option value="5">Post-Graduate</option>
+						<option value="6">Doctorate</option>
+					</select>
+				</label>
+			</div>
+			<div class="col-lg-6 col-sm-12">
+				<label for="overs">Marital Status
+					<select name="Marital_Status" class="btn btn-light btn-toolbar">
+						<option value="0">Married</option>
+						<option value="1">Single</option>
+						<option value="2">Not Known</option>
+						<option value="3">Divorced</option>
+					</select>
+				</label>
+			</div>
+			<div class="col-lg-6 col-sm-12">
+				<label for="overs">Income Category
+					<select name="Income_Category" class="btn btn-light btn-toolbar">
+						<option value="0">Less than $40K</option>
+						<option value="1">$40K-$60K</option>
+						<option value="2">$60K-$80K</option>
+						<option value="3">$80K-$120K</option>
+						<option value="4">$120K +</option>
+					</select>
+				</label>
+			</div>
+			<div class="col-lg-6 col-sm-12">
+				<label for="overs">Card Category
+					<select name="Card_Category" class="btn btn-light btn-toolbar">
+						<option value="0">Blue</option>
+						<option value="1">Silver</option>
+						<option value="2">Gold</option>
+						<option value="3">Platinum</option>
+					</select>
+				</label>
+			</div>
+			<div class="col-lg-6 col-sm-12">
+				<label for="runs">Period of relationship with Bank (In Months)
+					<input class="btn btn-light btn-toolbar" name="Months_on_book" min="1",type="number">
+				</label>
+			</div>
+			<div class="col-lg-6 col-sm-12">
+				<label for="runs">No. of products held by the customer
+					<input required type="number" class="btn btn-light btn-toolbar" name="Total_Relationship_Count" min="1" max="6" >
+				</label>
+			</div>
+			<div class="col-lg-6 col-sm-12">
+				<label for="runs">Cibil Score
+					<input required type="number" class="btn btn-light btn-toolbar" name="Cibil_Score" >
+				</label>
+			</div>
+			<div class="col-lg-6 col-sm-12">
+				<label for="runs" text-align="right">No. of months inactive in the last 12 months
+					<input required type="number" class="btn btn-light btn-toolbar" name="Months_Inactive_12_mon" min="1" max="12" >
+				</label>
+			</div>
+			<div class="col-lg-6 col-sm-12">
+				<label for="runs">No. of Contacts in the last 12 months
+					<input required type="number" class="btn btn-light btn-toolbar" name="Contacts_Count_12_mon" min="0" max="6" >
+				</label>
+			</div>
+			<div class="col-lg-6 col-sm-12">
+				<label for="runs">Credit Limit
+					<input required type="number" class="btn btn-light btn-toolbar" name="Credit_Limit">
+				</label>
+			</div>
+
+			<div class="col-lg-6 col-sm-12">
+				<label for="runs">Total Revolving Balance on the Credit Card
+					<input required type="number" class="btn btn-light btn-toolbar" name="Total_Revolving_Bal" >
+				</label>
+			</div>
+
+			<div class="col-lg-6 col-sm-12">
+				<label for="runs">Open to Buy Credit Line (Average of last 12 months)
+					<input required type="number" class="btn btn-light btn-toolbar" name="Avg_Open_To_Buy" >
+				</label>
+			</div>
+
+			<div class="col-lg-6 col-sm-12">
+				<label for="runs">Change in Transaction Amount (Q4 over Q1)
+					<input required type="number" class="btn btn-light btn-toolbar" name="Total_Amt_Chng_Q4_Q1">
+				</label>
+			</div>
+
+			<div class="col-lg-6 col-sm-12">
+				<label for="runs">Total Transaction Amount (Last 12 months)
+					<input required type="number" class="btn btn-light btn-toolbar" name="Total_Trans_Amt">
+				</label>
+			</div>
+			<div class="col-lg-6 col-sm-12">
+				<label for="runs">Total Transaction Count (Last 12 months)
+					<input required type="number" class="btn btn-light btn-toolbar" name="Total_Trans_Ct">
+				</label>
+			</div>
+			<div class="col-lg-6 col-sm-12">
+				<label for="runs">Change in Transaction Count (Q4 over Q1)
+					<input required type="number" class="btn btn-light btn-toolbar" name="Total_Ct_Chng_Q4_Q1">
+				</label>
+			</div>
+			<div class="col-lg-6 col-sm-12">
+				<label for="runs">Average Card Utilization Ratio
+					<input required class="btn btn-light btn-toolbar" name="Avg_Utilization_Ratio" min="0" max="1">
+				</label>
+			</div>
+
+			<div class="col-12" >
+				<input required type="submit" class="btn btn-success" value="Predict Price">
+			</div>
+		</div>
+	</form>
+</div>
+
+{% endblock %}
