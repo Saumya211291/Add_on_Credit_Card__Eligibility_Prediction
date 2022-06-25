@@ -1,4 +1,4 @@
-# Credit_Card_Sale_Prediction
+# Add on Card Eligibility Prediction
 
 
 This is an end to end project for bank telli calling team
